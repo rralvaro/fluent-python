@@ -13,7 +13,7 @@ class Vector:
         return hypot(self.x, self.y)
 
     def __bool__(self):
-        return bool(abs(self))
+        return bool(abs(self)) # 0 retorna falso el resto retorna true
 
     def __add__(self, other):
         x = self.x + other.x
@@ -22,3 +22,15 @@ class Vector:
 
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
+
+if __name__=='__main__':
+    v = Vector(3,4)
+    print(abs(v))
+    print(v * 3)
+    v2 = Vector(3,9)
+    print(v+v2)
+    v3 = Vector()
+    if bool(v3):
+        print ('Vacio')
+    else:
+        print('No vacio')
